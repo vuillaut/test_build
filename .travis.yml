@@ -32,13 +32,13 @@ before_install:
     - conda info -a # Useful for debugging any issues with conda
 
 install:
-    - conda env create -n test --file environment.yml
-    - conda activate test
+    - conda env create -n testbuild --file environment.yml
+    - conda activate testbuild
     - pip install https://github.com/cta-observatory/ctapipe/archive/$CTAPIPE_VERSION.tar.gz
     - pip install https://github.com/cta-observatory/ctapipe_io_lst/archive/$CTAPIPE_IO_LST_VERSION.tar.gz
     - pip install https://github.com/cta-sst-1m/protozfitsreader/archive/$PROTOZFITS_VERSION.tar.gz
-    - pip install https://github.com/cta-observatory/protopipe/$PROTOPIPE_VERSION.tar.gz
-    - pip install https://github.com/cta-observatory/cta-lstchain/$LSTCHAIN_VERSION.tar.gz
+    - pip install https://github.com/cta-observatory/protopipe/archive/$PROTOPIPE_VERSION.tar.gz
+    - pip install https://github.com/cta-observatory/cta-lstchain/archive/$LSTCHAIN_VERSION.tar.gz
 
 
 script:
