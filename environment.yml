@@ -5,6 +5,7 @@ channels:
   - conda-forge
 dependencies:
   - ctapipe=0.7.0
+  - gammapy
   - pip:
       - pytest_runner
       - pytest-ordering
