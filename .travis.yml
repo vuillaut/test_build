@@ -36,15 +36,15 @@ before_install:
 install:
     - conda env create -n testbuild --file environment.yml
     - conda activate testbuild
-    - if $CTAPIPE_VERSION IS NOT blank:
+    - if: $CTAPIPE_VERSION IS NOT blank
       pip install https://github.com/cta-observatory/ctapipe/archive/$CTAPIPE_VERSION.tar.gz
-    - if $CTAPIPE_IO_LST_VERSION IS NOT blank:
+    - if: $CTAPIPE_IO_LST_VERSION IS NOT blank
       pip install https://github.com/cta-observatory/ctapipe_io_lst/archive/$CTAPIPE_IO_LST_VERSION.tar.gz
-    - if $PROTOZFITS_VERSION IS NOT blank::
+    - if: $PROTOZFITS_VERSION IS NOT blank
       pip install https://github.com/cta-sst-1m/protozfitsreader/archive/$PROTOZFITS_VERSION.tar.gz
-    - if $PROTOPIPE_VERSION IS NOT blank::
+    - if: $PROTOPIPE_VERSION IS NOT blank
       pip install https://github.com/cta-observatory/protopipe/archive/$PROTOPIPE_VERSION.tar.gz
-    - if $LSTCHAIN_VERSION IS NOT blank::
+    - if: $LSTCHAIN_VERSION IS NOT blank
       pip install https://github.com/cta-observatory/cta-lstchain/archive/$LSTCHAIN_VERSION.tar.gz
 
 
