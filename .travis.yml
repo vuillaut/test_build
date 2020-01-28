@@ -1,7 +1,6 @@
 language: python
 
 python:
-    - 3.6
     - 3.7
 
 env:
@@ -37,11 +36,16 @@ before_install:
 install:
     - conda env create -n testbuild --file environment.yml
     - conda activate testbuild
-    - pip install https://github.com/cta-observatory/ctapipe/archive/$CTAPIPE_VERSION.tar.gz
-    - pip install https://github.com/cta-observatory/ctapipe_io_lst/archive/$CTAPIPE_IO_LST_VERSION.tar.gz
-    - pip install https://github.com/cta-sst-1m/protozfitsreader/archive/$PROTOZFITS_VERSION.tar.gz
-    - pip install https://github.com/cta-observatory/protopipe/archive/$PROTOPIPE_VERSION.tar.gz
-    - pip install https://github.com/cta-observatory/cta-lstchain/archive/$LSTCHAIN_VERSION.tar.gz
+    - if [ -z "$CTAPIPE_VERSION" ]:
+      pip install https://github.com/cta-observatory/ctapipe/archive/$CTAPIPE_VERSION.tar.gz
+    - if [ -z "$CTAPIPE_IO_LST_VERSION" ]:
+      pip install https://github.com/cta-observatory/ctapipe_io_lst/archive/$CTAPIPE_IO_LST_VERSION.tar.gz
+    - if [ -z "$PROTOZFITS_VERSION" ]:
+      pip install https://github.com/cta-sst-1m/protozfitsreader/archive/$PROTOZFITS_VERSION.tar.gz
+    - if [ -z "$PROTOPIPE_VERSION" ]:
+      pip install https://github.com/cta-observatory/protopipe/archive/$PROTOPIPE_VERSION.tar.gz
+    - if [ -z "$LSTCHAIN_VERSION" ]:
+      pip install https://github.com/cta-observatory/cta-lstchain/archive/$LSTCHAIN_VERSION.tar.gz
 
 
 script:
