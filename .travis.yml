@@ -3,6 +3,11 @@ language: python
 python:
     - 3.7
 
+env:
+  - name "latest releases"
+  CTAPIPE_VERSION="v0.7.0" CTAPIPE_IO_LST_VERSION="v0.4.1" PROTOZFITS_VERSION=v1.4.2 LSTCHAIN_VERSION="v0.4.3" PROTOPIPE_VERSION="v0.2.1"
+  - name "yes, masters"
+  CTAPIPE_VERSION="master" CTAPIPE_IO_LST_VERSION="master" PROTOZFITS_VERSION="master" LSTCHAIN_VERSION="master" PROTOPIPE_VERSION="master"
 
 matrix:
   allow_failures:
@@ -13,7 +18,7 @@ matrix:
       - name: "latest releases"
         env: CTAPIPE_VERSION="v0.7.0" CTAPIPE_IO_LST_VERSION="v0.4.1" PROTOZFITS_VERSION=v1.4.2 LSTCHAIN_VERSION="v0.4.3" PROTOPIPE_VERSION="v0.2.1"
       - name: "proto master"
-        env: CTAPIPE_VERSION="master" PROTOPIPE_VERSION="master"
+        env: CTAPIPE_VERSION="master" PROTOPIPE_VERSION="master" CTAPIPE_IO_LST_VERSION="v0.4.1" PROTOZFITS_VERSION=v1.4.2 LSTCHAIN_VERSION="v0.4.3" PROTOPIPE_VERSION="v0.2.1"
 
 before_install:
 
