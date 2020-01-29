@@ -36,10 +36,10 @@ before_install:
 install:
     - conda env create -n testbuild --file environment.yml
     - conda activate testbuild
-    - pip install https://github.com/cta-observatory/ctapipe/archive/$CTAPIPE_VERSION.tar.gz
-    - pip install https://github.com/cta-observatory/ctapipe_io_lst/archive/$CTAPIPE_IO_LST_VERSION.tar.gz
-    - pip install https://github.com/cta-sst-1m/protozfitsreader/archive/$PROTOZFITS_VERSION.tar.gz
-    - pip install https://github.com/cta-observatory/protopipe/archive/$PROTOPIPE_VERSION.tar.gz
+    - '[[ "$CTAPIPE_VERSION" = "" ]] || pip install https://github.com/cta-observatory/ctapipe/archive/$CTAPIPE_VERSION.tar.gz
+    - '[[ "$CTAPIPE_IO_LST_VERSION" = "" ]] || pip install https://github.com/cta-observatory/ctapipe_io_lst/archive/$CTAPIPE_IO_LST_VERSION.tar.gz
+    - '[[ "$PROTOZFITS_VERSION" = "" ]] || pip install https://github.com/cta-sst-1m/protozfitsreader/archive/$PROTOZFITS_VERSION.tar.gz
+    - '[[ "$PROTOPIPE_VERSION" = "" ]] || pip install https://github.com/cta-observatory/protopipe/archive/$PROTOPIPE_VERSION.tar.gz
     - '[[ "$LSTCHAIN_VERSION" = "" ]] || pip install https://github.com/cta-observatory/cta-lstchain/archive/$LSTCHAIN_VERSION.tar.gz'
 
 
